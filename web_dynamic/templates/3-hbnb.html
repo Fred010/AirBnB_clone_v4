@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AirBnB clone</title>
+    <link rel="stylesheet" href="../static/styles/3-header.css">
+    <link rel="stylesheet" href="../static/styles/1-main.css">
+    <link rel="stylesheet" href="../static/styles/3-filters.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/scripts/3-hbnb.js?{{ cache_id }}"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>AirBnB</h1>
+        <div id="api_status" class="available"></div>
+      </div>
+    </header>
+    <div class="filters">
+      <div class="container">
+        <h3>Amenities</h3>
+        <ul>
+          {% for amenity in amenities %}
+          <li>
+            <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+            {{ amenity.name }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <section class="places">
+      <div class="container">
+        <h1>Places</h1>
+        <div class="places-list">
+          <!-- Places will be populated here by JavaScript -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
