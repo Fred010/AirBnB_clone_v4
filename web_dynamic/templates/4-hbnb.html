@@ -1,0 +1,37 @@
+<!-- web_dynamic/templates/4-hbnb.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBNB - 4</title>
+    <!-- Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Import JavaScript for 4-hbnb -->
+    <script src="{{ url_for('static', filename='scripts/4-hbnb.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-hbnb.css') }}">
+</head>
+<body>
+    <!-- Your HTML content -->
+    <header>
+        <div id="api_status" class="circle"></div>
+        <!-- Other header content -->
+    </header>
+    <div class="filters">
+        <h4>Amenities</h4>
+        <ul>
+            {% for amenity in amenities %}
+                <li>
+                    <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+                    {{ amenity.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <section class="places">
+        <!-- Places will be populated by JavaScript -->
+    </section>
+</body>
+</html>
