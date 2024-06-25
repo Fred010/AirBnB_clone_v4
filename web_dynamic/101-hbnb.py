@@ -17,10 +17,10 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/100-hbnb', strict_slashes=False)
+@app.route('/101-hbnb', strict_slashes=False)
 def hbnb():
     """ HBNB is alive! """
-    return render_template('100-hbnb.html')
+    return render_template('101-hbnb.html')
 
 
 if __name__ == "__main__":
