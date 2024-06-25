@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirBnB Clone</title>
+    <link rel="stylesheet" href="../static/styles/4-hbnb.css">
+    <script type="text/javascript" src="../static/scripts/100-hbnb.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Header content -->
+    </header>
+    <div class="filters">
+        <h4>States</h4>
+        <ul>
+            {% for state in states %}
+            <li>
+                <input type="checkbox" data-id="{{ state.id }}" data-name="{{ state.name }}">
+                {{ state.name }}
+                <ul>
+                    {% for city in state.cities %}
+                    <li>
+                                                <input type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}">
+                        {{ city.name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="filters">
+        <h4>Amenities</h4>
+        <ul>
+            {% for amenity in amenities %}
+            <li>
+                <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+                {{ amenity.name }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <section class="places">
+        <!-- Places will be rendered here by JavaScript -->
+    </section>
+</body>
+</html>
